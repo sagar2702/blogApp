@@ -1,0 +1,43 @@
+<%- include("partials/header") %>
+<div class="ui main text container">
+    <div class="ui header centered huge">My Blog</div>
+       <div class="ui  segment raised">
+           <div class="ui divided items">
+               <% if(blogs.length==0){ %>
+                <div id="empty">
+                    <div class="ui header big">
+                       <h2>Oops No blogs!!!</h2> 
+                    </div>
+                    <div> 
+                        <a href="/blogs/new" class="ui inverted blue button big">Write your first blog<i class="ui arrow right icon"></i></a>
+                    </div>
+                </div>
+                
+               <% }else{ %>
+               `<% blogs.forEach(function(blog){ %>
+                   <div class="item">
+                      <img class="image" src="<%= blog.image %>" alt="image couldn't be loades">
+                    <div class="content">
+                        <a class="header" href="/blogs/<%= blog._id %>"><%= blog.title %></a>
+                        <div class="meta">
+                           <span><%= blog.created.toDateString() %></span>
+                        </div>
+                        <div class="description">
+                             <p><%= blog.body.substring(0,100) %>...</p>
+                        </div>
+                        <div class="extra">
+                            <a class="ui floated bold purple basic button" href="/blogs/<%= blog._id %>">
+                                Read More
+                                <i class="angle double right icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+             <% });%>
+            <% } %>
+       </div>
+   </div>
+</div>
+
+
+<%- include("partials/footer") %>

@@ -1,0 +1,26 @@
+body{
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+i.icon{
+    font-size: 1.5em;
+}
+.container.main{
+    margin-top: 5em;
+}
+
+.ui.segment:last-child{
+    margin-bottom: 2em;
+}
+
+#deleteButton{
+    display: inline;
+}
+
+#empty{
+    padding: 5em;
+}
+
+.arrow.right{
+    font-size: 1em;
+}
