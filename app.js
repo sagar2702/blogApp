@@ -1,11 +1,8 @@
 var express = require("express");
-var app = express();
 var mongoose = require("mongoose");
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
-// it remove all script tag from content 
-
-
+var app = express();
 //setup mongoose
 mongoose.connect("mongodb://localhost/blog_app", {useNewUrlParser: true, useUnifiedTopology: true});
 
@@ -25,10 +22,7 @@ var blogSchema = new mongoose.Schema({
 
 var Blog = mongoose.model("Blog", blogSchema);
 
-
 // routes
-
-
 app.get("/",(req, res)=>{
     res.redirect("/blogs");
 })
